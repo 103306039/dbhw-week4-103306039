@@ -61,7 +61,7 @@
           console.log(err);
         } else {
           var assetslList = data.result.results;
-          var HTMLAssetsList = assetsList.map(function(assets) {
+          var HTMLassetsList = assetsList.map(function(assets) {
             var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+assets.Name+"</h2><img class='img-thumbnail' src='"+assets.ImageName+"'><p><ul class='list-group'>";
             var items = "";
             for (var key in assets) {
@@ -72,7 +72,7 @@
             var HTMLString = HTMLString+items+"</ul></p><div>";
             return HTMLString;
           });
-          HTMLAssetsList.forEach(function(html) {
+          HTMLassetsList.forEach(function(html) {
             $(html).appendTo("#content");
           });
           $('.sk-cube-grid').css('display', 'none');
