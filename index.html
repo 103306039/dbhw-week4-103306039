@@ -1,27 +1,62 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <style>
-    body {background-color:lightgrey;font-size:20px}
-    h1   {color:purple;}
-    p    {color:green;}
-  </style>
-</head>
-<body>
-  <p style="font-size:25px">Data.Taipei臺北市政府資料開放平台</p>
-<hr>
-  <p style="color:black;margin-left:20%;margin-top:5%;">為資料開放政策，臺北市政府整合各局處開放資料的網站，供市民瀏覽及程式開發者應用。</p>
-  <p style="color:black;margin-left:20%;">藉由本網站，民眾可以簡單地獲得開放的資料(例如交通資訊等)，以提高生活品質。</p>
-  <p><a href="http://data.taipei/opendata/datalist/listDataset"><img src="http://data.taipei//resources/images/opendata/tcglogo.jpg" alt="data.taipei.com" style="width:208px;height:142px;margin-left:40%;"</a></p><a href="http://data.taipei/opendata/datalist/listDataset"><p style="color:black;margin-left:40%;">click to enter</p></a>
-    <hr>
-  <a>
-  <p style="color:black;">資料維護: 臺北市政府</p>
-    <p style="color:black;">版權所有: 臺北市政府資訊局</p></a>
-  <p style="color:black;">dbhw-week4-103306039</p></a>
-</body>
- <script type="text/javascript">
+  <head>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.6.1/lodash.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">臺北市文化資產</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <br>
+        <br>
+        <h1>臺北市文化資產</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <img src="http://163.29.39.183/uploads/images/medium/2a2785be-2cce-4e37-86d0-742e75f9ace3.jpg"class="img-thumbnail">
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2016 NCCU MIS</p>
+      </footer>
+    </div> <!-- /container -->
+
+  </body>
+  <script type="text/javascript">
     $(document).ready(function() {
       getData(function(err, result) {
         if(err) {
