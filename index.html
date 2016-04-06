@@ -49,7 +49,7 @@
 
       <hr>
       <footer>
-        <p>&copy; 2016 NCCU MIS</p>
+        <p>&copy; 2016 NCCU MIS 103306039</p>
       </footer>
     </div> <!-- /container -->
 
@@ -60,19 +60,19 @@
         if(err) {
           console.log(err);
         } else {
-          var animalList = data.result.results;
-          var HTMLanimalList = animalList.map(function(animal) {
-            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+animal.Name+"</h2><img class='img-thumbnail' src='"+animal.ImageName+"'><p><ul class='list-group'>";
+          var assetlList = data.result.results;
+          var HTMLassetList = assetList.map(function(asset) {
+            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+asset.Name+"</h2><img class='img-thumbnail' src='"+asset.ImageName+"'><p><ul class='list-group'>";
             var items = "";
-            for (var key in animal) {
+            for (var key in asset) {
               if(key!="_id" && key!="ImageName") {
-                items=items+"<li class='list-group-item'>"+key+":"+animal[key]+"</li>";
+                items=items+"<li class='list-group-item'>"+key+":"+asset[key]+"</li>";
               }
             }
             var HTMLString = HTMLString+items+"</ul></p><div>";
             return HTMLString;
           });
-          HTMLanimalList.forEach(function(html) {
+          HTMLassetList.forEach(function(html) {
             $(html).appendTo("#content");
           });
           $('.sk-cube-grid').css('display', 'none');
