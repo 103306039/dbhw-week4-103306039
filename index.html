@@ -60,19 +60,19 @@
         if(err) {
           console.log(err);
         } else {
-          var assetslList = data.result.results;
-          var HTMLassetsList = assetsList.map(function(assets) {
-            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+assets.Name+"</h2><img class='img-thumbnail' src='"+assets.ImageName+"'><p><ul class='list-group'>";
+          var animalList = data.result.results;
+          var HTMLanimalList = animalList.map(function(animal) {
+            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+animal.Name+"</h2><img class='img-thumbnail' src='"+animal.ImageName+"'><p><ul class='list-group'>";
             var items = "";
-            for (var key in assets) {
+            for (var key in animal) {
               if(key!="_id" && key!="ImageName") {
-                items=items+"<li class='list-group-item'>"+key+":"+assets[key]+"</li>";
+                items=items+"<li class='list-group-item'>"+key+":"+animal[key]+"</li>";
               }
             }
             var HTMLString = HTMLString+items+"</ul></p><div>";
             return HTMLString;
           });
-          HTMLassetsList.forEach(function(html) {
+          HTMLanimalList.forEach(function(html) {
             $(html).appendTo("#content");
           });
           $('.sk-cube-grid').css('display', 'none');
