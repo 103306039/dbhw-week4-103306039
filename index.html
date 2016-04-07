@@ -66,7 +66,7 @@
             var items = "";
             for (var key in animal) {
               if(key!="_id" && key!="ImageName") {
-                items=items+"<li class='list-group-item'>"+key+":"+case[key]+"</li>";
+                items=items+"<li class='list-group-item'>"+key+":"+animal[key]+"</li>";
               }
             }
             var HTMLString = HTMLString+items+"</ul></p><div>";
