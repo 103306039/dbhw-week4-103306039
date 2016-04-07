@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./main.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -46,7 +46,6 @@
         <div class="sk-cube sk-cube8"></div>
         <div class="sk-cube sk-cube9"></div>
       </div>
-
       <hr>
       <footer>
         <p>&copy; 2016 NCCU MIS 103306039</p>
@@ -60,19 +59,19 @@
         if(err) {
           console.log(err);
         } else {
-          var caseList = data.result.results;
-          var HTMLcaseList = caseList.map(function(case) {
-            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+case.Name+"</h2><img class='img-thumbnail' src='"+case.Image+"'><p><ul class='list-group'>";
+          var assetList = data.result.results;
+          var HTMLassetList = assetList.map(function(asset) {
+            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+asset.Name+"</h2><img class='img-thumbnail' src='"+asset.Image+"'><p><ul class='list-group'>";
             var items = "";
-            for (var key in case) {
+            for (var key in asset) {
               if(key!="_id" && key!="Image") {
-                items=items+"<li class='list-group-item'>"+key+":"+case[key]+"</li>";
+                items=items+"<li class='list-group-item'>"+key+":"+asset[key]+"</li>";
               }
             }
             var HTMLString = HTMLString+items+"</ul></p><div>";
             return HTMLString;
           });
-          HTMLcaseList.forEach(function(html) {
+          HTMLassetList.forEach(function(html) {
             $(html).appendTo("#content");
           });
           $('.sk-cube-grid').css('display', 'none');
