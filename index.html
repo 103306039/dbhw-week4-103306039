@@ -60,8 +60,8 @@
         if(err) {
           console.log(err);
         } else {
-          var caseList = data.result.results;
-          var HTMLcaseList = caseList.map(function(case) {
+          var CaseList = data.result.results;
+          var HTMLCaseList = CaseList.map(function(case) {
             var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+case.Name+"</h2><img class='img-thumbnail' src='"+case.ImageName+"'><p><ul class='list-group'>";
             var items = "";
             for (var key in case) {
@@ -72,7 +72,7 @@
             var HTMLString = HTMLString+items+"</ul></p><div>";
             return HTMLString;
           });
-          HTMLcaseList.forEach(function(html) {
+          HTMLCaseList.forEach(function(html) {
             $(html).appendTo("#content");
           });
           $('.sk-cube-grid').css('display', 'none');
