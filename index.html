@@ -61,7 +61,7 @@
         } else {
           var assetList = data.result.results;
           var HTMLassetList = assetList.map(function(asset) {
-            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+asset.Name+"</h2><img class='img-thumbnail' src='"+asset.pic96_url+"'><p><ul class='list-group'>";
+            var HTMLString = "<div class='col-md-4 drop-"+(Math.round(Math.random()*10000%3)+1)+"'><h2>"+case_name+"</h2><img class='img-thumbnail' src='"+asset.pic96_url+"'><p><ul class='list-group'>";
             var items = "";
             for (var key in asset) {
               if(key!="_id" && key!="Image") {
